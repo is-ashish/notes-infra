@@ -1,3 +1,4 @@
+```bash
 notes-infra/
 │── .github/workflows/    # CI/CD pipeline for Kubernetes deployments
 │── environments/
