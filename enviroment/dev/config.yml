@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: notes-config
+  namespace: dev
+data:
+  DB_HOST: "notes-db.dev.internal"
+  DB_PORT: "5432"
+  ENABLE_LOGGING: "true"
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: notes-secrets
+  namespace: dev
+type: Opaque
+data:
+  DB_USER: "ZGV2dXNlcg=="  # base64 encoded 'devuser'
+  DB_PASS: "c2VjdXJlcGFzcw=="  # base64 encoded 'securepass'
